@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Book a Cleaner</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:400,500,700%7CNoto+Sans:400,700">
+    <link rel="stylesheet" href="css/style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5742661798101041"
+     crossorigin="anonymous"></script>  </head>
+     <style>
+      .booking-form {
+          background-color: #fff;
+          padding: 20px;
+          max-width: 100%;
+          margin: auto;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      h2 {
+          text-align: center;
+      }
+  
+      label, p {
+          font-weight: 300; /* Using 300 as a valid font-weight value */
+        
+      }
+  
+      input, select, textarea {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+  
+      button {
+          width: 100%;
+          padding: 15px;
+          background-color: #050a30;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 15px !important;
+      }
+  
+      button:hover {
+          background-color: #03061d;
+      }
+  
+      .progress-container {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          font-size: 12px;
+      }
+  
+      .step {
+          width: 100%;
+          position: relative;
+          text-align: center;
+      }
+      .step.active{
+    font-weight: bold;
+    color:#000;
+  }
+      .step:before {
+          content: attr(data-step);
+          width: 30px;
+          height: 30px;
+          background-color: #b7f4d8;
+          color: #000;
+          border-radius: 50%;
+          display: inline-block;
+          line-height: 30px;
+          text-align: center;
+          margin: 10px;
+      }
+  
+      .step.active:before {
+          background-color: #16a085;
+          color: white;
+          font-weight: bold;
+          
+      }
+  
+      .line {
+          position: absolute;
+          top: 15px;
+          left: calc(50% + 15px);
+          width: 100%;
+          height: 3px;
+          background-color: #ccc; /* Add background color */
+          z-index: -1;
+      }
+  
+      .step.active + .line {
+          background-color: #16a085; /* Active line color */
+      }
+  
+      .tab {
+          display: none;
+      }
+  
+      .tab.active {
+          display: block;
+      }
+  
+      .review-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+   width: 60%
+}
+.review-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-item:last-child {
+    border-bottom: none;
+}
+.review-item label {
+    font-weight: bold;
+}
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-button:hover {
+    background-color: #0056b3;
+}
+  /* Attention-seeking text styling */
+.attention-text {
+    background-color: #f8d7da; /* Light red background for attention */
+    color: #721c24; /* Dark red text for contrast */
+    border: 1px solid #f5c6cb; /* Border matching the theme */
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+     /* Price label styling */
+.price-label {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    float: right;
+    margin-bottom: 20px;
+    color: #000;
+}
+.price-label span {
+    display: block;
+    font-size: 24px;
+    color: #16a085;
+}
+  </style>
+  <body>
+
+  <div class="container">
+<div class="booking-form">
+   <!-- Logo -->
+   <div class="logo"><a href="index.html">
+    <img src="images/brand-default-229x58.png" width="100" alt="ShineBright Cleaning Logo"></a>
+  </div>
+
+  <h2>ShineBright Cleaning - Book a Cleaner</h2>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+      <div class="step active" data-step="1">Your Contact</div>
+      <div class="line"></div>
+      <div class="step" data-step="2">Your Address</div>
+      <div class="line"></div>
+      <div class="step" data-step="3">Your Property</div>
+      <div class="line"></div>
+      <div class="step" data-step="4"> Your Schedule</div>
+      <div class="line"></div>
+      <div class="step" data-step="5">Booking Summary</div>
+  </div>
+
+ <!-- Multi-step form -->
+<form id="bookingForm" action="https://formspree.io/f/xkgweqek" method="post">
+
+  <!-- Step 1: Contact Information -->
+  <div class="tab active">
+    <h3>Your Contact</h3>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+  <!-- Step 2: Address and Service Type -->
+  <div class="tab">
+    <h3>Your Address</h3>
+      <label for="address">Address of Property</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="service">Type of Cleaning Service  <span class="price-label">Price: £16.95/hr</span></label>
+      <select id="service" name="service" required>
+          <option value="">Select a Service</option>
+          <option value="house-cleaning">House Cleaning</option>
+          <option value="commercial-cleaning">Commercial Cleaning</option>
+          <option value="end-of-tenancy">End of Tenancy Cleaning</option>
+          <option value="window-cleaning">Window Cleaning</option>
+          <option value="deep-cleaning">Deep Cleaning</option>
+          <option value="carpet-cleaning">Carpet Cleaning</option>
+          <option value="move-in-move-out-cleaning">Move-In/Move-Out Cleaning</option>
+      </select>
+
+      <button type="button" onclick="prevStep()">Previous</button>
+      <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+  <!-- Step 3: Property Details -->
+  <div class="tab">
+    <h3>Your Property</h3>
+      <label for="bedrooms">Number of Bedrooms</label>
+      <input type="number" id="bedrooms" name="bedrooms" min="1" required>
+
+      <label for="bathrooms">Number of Bathrooms/Toilets</label>
+      <input type="number" id="bathrooms" name="bathrooms" min="1" required>
+
+      <label for="hours">Estimated Hours of Cleaning</label>
+      <select id="hours" name="hours" required>
+          <option value="">Select Hours</option>
+          <option value="2">2 Hours</option>
+          <option value="3">3 Hours</option>
+          <option value="4">4 Hours</option>
+          <option value="5">5 Hours</option>
+          <option value="6">6 Hours</option>
+          <option value="7">7 Hours</option>
+          <option value="8">8+ Hours</option>
+      </select>
+
+      <div class="radio-group">
+          <p>Living Room:</p>
+          <div class="inline-group">
+              <label><input type="radio" name="livingRoom" value="yes" required> Yes</label>
+              <label><input type="radio" name="livingRoom" value="no" required> No</label>
+          </div>
+      </div>
+
+      <div class="radio-group">
+          <p>Kitchen:</p>
+          <div class="inline-group">
+              <label><input type="radio" name="kitchen" value="yes" required> Yes</label>
+              <label><input type="radio" name="kitchen" value="no" required> No</label>
+          </div>
+      </div>
+
+      <div class="checkbox-group">
+          <p>Specific Areas or Tasks to Focus On:</p>
+          <div class="inline-group">
+              <label><input type="checkbox" name="tasks" value="dusting"> Dusting</label><br>
+              <label><input type="checkbox" name="tasks" value="mopping"> Mopping</label><br>
+              <label><input type="checkbox" name="tasks" value="vacuuming"> Vacuuming</label><br>
+              <label><input type="checkbox" name="tasks" value="polishing"> Polishing (e.g., wood, furniture, etc.)</label><br>
+              <label><input type="checkbox" name="tasks" value="window-cleaning"> Window Cleaning (Inside only)</label><br>
+              <label><input type="checkbox" name="tasks" value="deep-kitchen"> Deep Cleaning for Kitchen (Oven, Fridge, etc.)</label><br>
+              <label><input type="checkbox" name="tasks" value="bathroom-cleaning"> Bathroom Deep Clean</label><br>
+             
+              <label><input type="checkbox" name="tasks" value="decluttering"> Decluttering/Organizing</label><br>
+              <label><input type="checkbox" name="tasks" value="other"> Other (Please specify): <input type="text" name="otherTask"></label>
+          </div>
+      </div>
+
+      <div class="radio-group">
+          <p>How often do you need our services?</p>
+          <div class="inline-group">
+              <label><input type="radio" name="frequency" value="one-time" required> One-Time Service</label><br>
+              <label><input type="radio" name="frequency" value="weekly" required> Weekly</label><br>
+              <label><input type="radio" name="frequency" value="bi-weekly" required> Bi-Weekly</label><br>
+              <label><input type="radio" name="frequency" value="monthly" required> Monthly</label><br>
+              <label><input type="radio" name="frequency" value="other"> Other (Please specify): <input type="text" name="otherFrequency"></label>
+          </div>
+      </div>
+
+      <label for="special">Do you have any special cleaning requests or concerns?</label>
+      <textarea id="special" name="special" rows="4"></textarea>
+
+      <div class="radio-group">
+          <p>Will you be providing the cleaning equipment? (Hoover and Mop) </p>
+          <div class="inline-group">
+              <label><input type="radio" name="equipment" value="providing"> Yes</label><br>
+              <label><input type="radio" name="equipment" value="not providing"> No</label>
+          </div>
+      </div>
+
+      <div class="radio-group">
+          <p>Access to the Property:</p>
+          <div class="inline-group">
+              <label><input type="radio" name="access" value="will be there"> I will be at the property during the service.</label><br>
+              <label><input type="radio" name="access" value="will give access"> I will provide access instructions (e.g., key, code, etc.).</label>
+          </div>
+      </div>
+
+      <div class="radio-group">
+          <p>How Did You Hear About Us?</p>
+          <div class="inline-group">
+              <label><input type="radio" name="referral" value="friend-referral"> Friend/Referral</label><br>
+              <label><input type="radio" name="referral" value="google"> Google/Search Engine</label><br>
+              <label><input type="radio" name="referral" value="social-media"> Social Media</label><br>
+              <label><input type="radio" name="referral" value="other"> Other (Please specify): <input type="text" name="referralDetails"></label>
+          </div>
+      </div>
+
+      <button type="button" onclick="prevStep()">Previous</button>
+      <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+  <!-- Step 4: Date & Time -->
+  <div class="tab">
+    <h3>Your Schedule</h3>
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Preferred Time</label>
+      <select id="time" name="time" required>
+          <option value="">Select a Time</option>
+          <option value="morning">Morning (9AM - 12PM)</option>
+          <option value="afternoon">Afternoon (12PM - 3PM)</option>
+          <option value="evening">Evening (3PM - 6PM)</option>
+      </select>
+
+      <button type="button" onclick="prevStep()">Previous</button>
+      <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+  <!-- Step 5: Review Details -->
+  <div class="tab">
+    <div class="price-label">
+            Your Price:
+            <span>£16.95 per hour</span>
+        </div>
+      <h3>Booking Summary</h3>
+      <p id="reviewPrompt">Let's review your booking</p>
+  
+      <p>Before you submit your booking, let's quickly review what you've selected.</p>
+    
+       <div class="review-box">
+        <div class="review-item">
+            <label>Full Name:</label> <span id="reviewName"></span>
+            <button type="button" class="edit-button" onclick="editSection(0)">Edit</button>  
+      
+      </div>
+        <div class="review-item">
+            <label>Phone Number:</label> <span id="reviewPhone"></span>
+            <button type="button" class="edit-button" onclick="editSection(0)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Email Address:</label> <span id="reviewEmail"></span>
+            <button type="button" class="edit-button" onclick="editSection(0)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Address:</label> <span id="reviewAddress"></span>
+            <button type="button" class="edit-button" onclick="editSection(1)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Service Type:</label> <span id="reviewService"></span>
+            <button type="button" class="edit-button" onclick="editSection(1)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Bedrooms:</label> <span id="reviewBedrooms"></span>
+            <button type="button" class="edit-button" onclick="editSection(2)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Bathrooms:</label> <span id="reviewBathrooms"></span>
+            <button type="button" class="edit-button" onclick="editSection(2)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Cleaning Hours:</label> <span id="reviewHours"></span>
+            <button type="button" class="edit-button" onclick="editSection(2)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Living Room:</label> <span id="reviewLivingRoom"></span>
+            <button type="button" class="edit-button" onclick="editSection(2)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Kitchen:</label> <span id="reviewKitchen"></span>
+            <button type="button" class="edit-button" onclick="editSection(2)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Special Areas:</label> <span id="reviewTasks"></span>
+            <button type="button" class="edit-button" onclick="editSection(2)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Preferred Date:</label> <span id="reviewDate"></span>
+            <button type="button" class="edit-button" onclick="editSection(3)">Edit</button>
+        </div>
+        <div class="review-item">
+            <label>Preferred Time:</label> <span id="reviewTime"></span>
+            <button type="button" class="edit-button" onclick="editSection(3)">Edit</button>
+        </div>
+    </div>
+
+       <!-- Terms and Conditions Checkbox -->
+  <div class="terms attention-text">
+<p>Please make sure all the questions are answered<br><br>
+We'll get to work allocating your cleaner & will contact you as soon as possible.<br><br>
+Please note your booking is not final until accepted by us by means of our acceptance letter.<br><br>
+    <input type="checkbox" id="terms" name="terms" required onchange="toggleSubmitButton()">
+    <label for="terms">I have read and accept the <a href="/termofuse.pdf">Terms and Conditions</a></label>
+  </div>
+
+      <button type="button" onclick="prevStep()">Previous</button>
+      <button type="submit">Confirm and Book Now</button>
+  </div>
+
+</form>
+
+<script>
+  // Function to move to the next step
+  function nextStep() {
+      // Save the current step data and switch to the next step
+      var currentTab = document.querySelector('.tab.active');
+      currentTab.classList.remove('active');
+      currentTab.nextElementSibling.classList.add('active');
+  
+      // Populate review data on Step 5
+      if (currentTab.nextElementSibling.classList.contains('tab') && currentTab.nextElementSibling.contains(document.querySelector('.review-box'))) {
+          populateReview();
+      }
+  }
+  
+  // Function to go to the previous step
+  function prevStep() {
+      var currentTab = document.querySelector('.tab.active');
+      currentTab.classList.remove('active');
+      currentTab.previousElementSibling.classList.add('active');
+  }
+  
+  // Function to populate the review box
+  function populateReview() {
+      // Get the form values
+      document.getElementById('reviewName').innerText = document.getElementById('name').value;
+      document.getElementById('reviewPhone').innerText = document.getElementById('phone').value;
+      document.getElementById('reviewEmail').innerText = document.getElementById('email').value;
+      document.getElementById('reviewAddress').innerText = document.getElementById('address').value;
+      document.getElementById('reviewService').innerText = document.getElementById('service').value;
+      document.getElementById('reviewBedrooms').innerText = document.getElementById('bedrooms').value;
+      document.getElementById('reviewBathrooms').innerText = document.getElementById('bathrooms').value;
+      document.getElementById('reviewHours').innerText = document.getElementById('hours').value;
+      document.getElementById('reviewLivingRoom').innerText = document.querySelector('input[name="livingRoom"]:checked').value;
+      document.getElementById('reviewKitchen').innerText = document.querySelector('input[name="kitchen"]:checked').value;
+  
+      // Get all checked checkboxes for tasks
+      var tasks = document.querySelectorAll('input[name="tasks"]:checked');
+      var taskList = [];
+      tasks.forEach(function(task) {
+          taskList.push(task.value);
+      });
+      document.getElementById('reviewTasks').innerText = taskList.join(', ');
+  
+      document.getElementById('reviewFrequency').innerText = document.querySelector('input[name="frequency"]:checked').value;
+      document.getElementById('reviewSpecial').innerText = document.getElementById('special').value;
+      document.getElementById('reviewEquipment').innerText = document.querySelector('input[name="equipment"]:checked').value;
+      document.getElementById('reviewAccess').innerText = document.querySelector('input[name="access"]:checked').value;
+      document.getElementById('reviewReferral').innerText = document.querySelector('input[name="referral"]:checked').value;
+      document.getElementById('reviewDate').innerText = document.getElementById('date').value;
+      document.getElementById('reviewTime').innerText = document.getElementById('time').value;
+  }
+  // Function to jump to the relevant section for editing
+function editSection(tabIndex) {
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+    });
+    tabs[tabIndex].classList.add('active');
+}
+  // Function to toggle the submit button based on terms checkbox
+  function toggleSubmitButton() {
+      var termsCheckbox = document.getElementById('terms');
+      var submitButton = document.querySelector('button[type="submit"]');
+      submitButton.disabled = !termsCheckbox.checked;
+  }
+  </script>
+
+</html>

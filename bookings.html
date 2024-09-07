@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Trusted Cleaner | ShineBright Cleaning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        .container {
+    display: flex; /* Use Flexbox to align sections side by side */
+    justify-content: space-between; /* Adds space between the two sections */
+    gap: 20px; /* Adds space between the two sections */
+    padding: 20px;
+    flex-wrap: wrap; /* Ensures sections stack on smaller screens */
+}
+
+.info-section {
+    flex: 1; /* Ensures both sections take up equal space */
+    background-color: #f9f9f9; /* Optional: Adds a light background to each section */
+    padding: 20px;
+    border-radius: 8px; /* Optional: Rounds the corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+.info-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.info-section li {
+    margin-bottom: 10px;
+}
+        header {
+    background-image: url('images/bg-about-01.png'); /* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the entire header area */
+    background-position: center; /* Center the image */
+    color: #fff; /* Text color */
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 123, 255, 0.6); /* Optional: Adds a slight color overlay to ensure text readability */
+}
+
+
+
+        header h1 {
+            margin: 0;
+        }
+        .form-section, .info-section {
+           
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-section h2, .info-section h2 {
+            margin-top: 0;
+        }
+        .form-section label, .info-section p {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-section input[type="text"], .form-section input[type="email"], .form-section button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-section button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-section button:hover {
+            background-color: #0056b3;
+        }
+        .info-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .info-section ul li {
+            margin-bottom: 10px;
+        }
+        .info-section ul li::before {
+            content: '✓';
+            color: green;
+            margin-right: 10px;
+        }
+
+        .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color:#050a30;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #050a30;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShineBright Cleaning</h1>
+        <p>Book a trusted cleaner online within minutes</p>
+      <!-- Booking Form -->
+        <div class="form-section">
+            <h2>Where do you require cleaning?</h2>
+           
+            <form action="https://formspree.io/f/xkgweqek" method="post">
+                <label for="postcode">Enter your postcode</label>
+                <input type="text" id="postcode" name="postcode" required>
+                
+               
+                <a class="btn" href= "booking-a-cleaner.html"> Start my online booking</a>
+            </form>
+        </div>
+      </header>
+
+    <div class="container">
+      
+
+        <!-- Why Choose Us -->
+        <div class="info-section">
+            <h2>Why ShineBright Clean?</h2>
+            <ul>
+                
+                <li>Affordable rates</li>
+                <li>Established cleaning company</li>
+                <li>DBS and Reference checked local cleaners</li>
+                <li>Insurance coverage provided</li>
+                <li>Interview cleaner before starting</li>
+                <li>Top rated cleaning services</li>
+                <li>91% of clients recommend us</li>
+            </ul>
+        </div>
+
+        <!-- Advice -->
+        <div class="info-section">
+            <h2>Why should you book a house cleaner?</h2>
+            <p>Booking a house cleaner is helpful. Reasons should you book a domestic cleaning service:</p>
+            <ul>
+                <li>A family gathering at your place</li>
+                <li>A surprise! Whether it be just out of kindness, for a birthday or an anniversary, it really is an excellent gift coming back to a lovely and clean home</li>
+                <li>Before a house party and the following day</li>
+                <li>For an elderly family member who needs help around the house</li>
+                <li>If you're not feeling well or are pregnant</li>
+                <li>If you just can't find the time to clean due to work or stress</li>
+                <li>If you just feel like treating yourself to a highly rated house cleaning service</li>
+                <li>If you find you're not having enough family time and want to be a bit more free to do things together</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
